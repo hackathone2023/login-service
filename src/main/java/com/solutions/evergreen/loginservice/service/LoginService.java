@@ -1,7 +1,7 @@
 package com.solutions.evergreen.loginservice.service;
 
-import com.solutions.evergreen.loginservice.controller.domain.LoginRequest;
-import com.solutions.evergreen.loginservice.controller.domain.LoginResponse;
+import com.solutions.evergreen.loginservice.domain.LoginRequest;
+import com.solutions.evergreen.loginservice.domain.LoginResponse;
 
 public interface LoginService {
 

@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.solutions.evergreen.loginservice.controller.domain.LoginRequest;
-import com.solutions.evergreen.loginservice.controller.domain.LoginResponse;
+import com.solutions.evergreen.loginservice.domain.LoginRequest;
+import com.solutions.evergreen.loginservice.domain.LoginResponse;
 import com.solutions.evergreen.loginservice.service.LoginService;
 
 @Controller

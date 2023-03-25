@@ -1,4 +1,4 @@
-package com.solutions.evergreen.loginservice.controller.domain;
+package com.solutions.evergreen.loginservice.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
