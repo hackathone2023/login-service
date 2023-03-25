@@ -8,22 +8,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.solutions.evergreen.loginservice.controller.domain.LoginRequest;
 import com.solutions.evergreen.loginservice.controller.domain.LoginResponse;
-import com.solutions.evergreen.loginservice.service.LoginService;
 
 @Controller
 @RequestMapping("/login")
 public class LoginController {
 
-	@Autowired
-	LoginService loginService;
+	
 
 	@RequestMapping(value = "/signup")
 	public @ResponseBody LoginResponse signup(@RequestBody LoginRequest loginRequest) {
-		return loginService.signup(loginRequest);
+		return null;
 	}
 
 	@RequestMapping(value = "/authenticate")
 	public @ResponseBody LoginResponse authenticate(@RequestBody LoginRequest loginRequest) {
-		return loginService.authenticate(loginRequest);
+		return null;
 	}
 }
