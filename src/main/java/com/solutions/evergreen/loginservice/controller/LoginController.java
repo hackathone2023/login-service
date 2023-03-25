@@ -14,16 +14,17 @@ import com.solutions.evergreen.loginservice.service.LoginService;
 @RequestMapping("/login")
 public class LoginController {
 
-	@Autowired
-	LoginService loginService;
 
-	@RequestMapping(value = "/signup")
-	public @ResponseBody LoginResponse signup(@RequestBody LoginRequest loginRequest) {
-		return loginService.signup(loginRequest);
-	}
-
-	@RequestMapping(value = "/authenticate")
-	public @ResponseBody LoginResponse authenticate(@RequestBody LoginRequest loginRequest) {
-		return loginService.authenticate(loginRequest);
-	}
+//	@Autowired
+//	LoginService loginService;
+//
+//	@RequestMapping(value = "/signup")
+//	public @ResponseBody LoginResponse signup(@RequestBody LoginRequest loginRequest) {
+//		return loginService.signup(loginRequest);
+//	}
+//
+//	@RequestMapping(value = "/authenticate")
+//	public @ResponseBody LoginResponse authenticate(@RequestBody LoginRequest loginRequest) {
+//		return loginService.authenticate(loginRequest);
+//	}
 }
