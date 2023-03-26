@@ -1,10 +1,10 @@
-package com.solutions.evergreen.loginservice;
+package com.evergreen.login.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LoginServiceApplicationTests {
+class SpringAzureDemoApplicationTests {
 
 	@Test
 	void contextLoads() {
