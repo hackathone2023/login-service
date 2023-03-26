@@ -1,44 +1,35 @@
 package com.evergreen.login.controller;
 
-import com.evergreen.login.dto.SignUpRequest;
-import com.evergreen.login.dto.SignUpResponse;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
-import java.util.Random;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.evergreen.login.domain.LoginRequest;
+import com.evergreen.login.domain.LoginResponse;
+import com.evergreen.login.domain.SignUpRequest;
+import com.evergreen.login.domain.SignUpResponse;
+import com.evergreen.login.service.LoginService;
 
 @RestController
+@RequestMapping("/login")
 public class LoginController {
 
+	@Autowired
+	LoginService loginService;
 
-    @CrossOrigin
-    @PostMapping(value = "/login/signUp", consumes = MediaType.ALL_VALUE)
-    public SignUpResponse signUp() {
-//		String name = signUpRequest.getName().substring(0,3);
-//		String compName = signUpRequest.getCompName().substring(0,3);
+	@CrossOrigin
+	@PostMapping(value = "/signup")
+	public @ResponseBody SignUpResponse signup(@RequestBody SignUpRequest loginRequest) {
+		return loginService.signup(loginRequest);
+	}
 
-        Random random = new Random();
-        int id = random.nextInt(1000);
-
-        SignUpResponse signUpResponse = new SignUpResponse();
-        signUpResponse.setSuccess("true");
-        signUpResponse.setEvergreenId("test"+id);
-
-        return signUpResponse;
-    }
-
-    @PostMapping("/login/authenticate")
-    @CrossOrigin
-    public SignUpResponse authenticate(@RequestParam("evergreenId") String evergreenId, @RequestParam("password") String pwd){
-        SignUpResponse signUpResponse = new SignUpResponse();
-        signUpResponse.setSuccess("true");
-        signUpResponse.setEvergreenId(evergreenId);
-        return signUpResponse;
-    }
-
-    @GetMapping("/login/message/v2")
-    @CrossOrigin
-    public String message(){
-        return "Congrats ! your application deployed successfully in Azure Platform. !";
-    }
-
+	@CrossOrigin
+	@PostMapping(value = "/authenticate")
+	public @ResponseBody LoginResponse authenticate(@RequestBody LoginRequest loginRequest) {
+		return loginService.authenticate(loginRequest);
+	}
 }
