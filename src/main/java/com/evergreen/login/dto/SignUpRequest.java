@@ -1,4 +1,4 @@
-package com.evergreen.dto;
+package com.evergreen.login.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
