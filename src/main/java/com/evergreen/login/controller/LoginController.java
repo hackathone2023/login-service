@@ -9,21 +9,6 @@ import java.util.Random;
 @RestController
 public class LoginController {
 
-    @CrossOrigin
-    @PostMapping(value = "/login/signUp")
-    public SignUpResponse signUp(@RequestBody SignUpRequest signUpRequest) {
-        String name = signUpRequest.getName().substring(0,3);
-        String compName = signUpRequest.getCompName().substring(0,3);
-
-        Random random = new Random();
-        int id = random.nextInt(1000);
-
-        SignUpResponse signUpResponse = new SignUpResponse();
-        signUpResponse.setSuccess("true");
-        signUpResponse.setEvergreenId(name+compName+id);
-
-        return signUpResponse;
-    }
 
     @CrossOrigin
     @PostMapping(value = "/login/signUp", consumes = MediaType.ALL_VALUE)
@@ -41,7 +26,7 @@ public class LoginController {
         return signUpResponse;
     }
 
-    @GetMapping("/login/authenticate")
+    @PostMapping("/login/authenticate")
     @CrossOrigin
     public SignUpResponse authenticate(@RequestParam("evergreeid") String evergreenId, @RequestParam("pwd") String id){
         SignUpResponse signUpResponse = new SignUpResponse();
