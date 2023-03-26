@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 public class SignUpRequest {
 
     private String name;
-    private String compName;
-    private String buisnessAddr;
-    private String buisnessEmail;
-    private String pwd;
-    private String confirmPwd;
+    private String companyName;
+    private String businessAddress;
+    private String businessEmail;
+    private String password;
+    private String confirmPassword;
 
 
 

@@ -28,7 +28,7 @@ public class LoginController {
 
     @PostMapping("/login/authenticate")
     @CrossOrigin
-    public SignUpResponse authenticate(@RequestParam("evergreeid") String evergreenId, @RequestParam("pwd") String id){
+    public SignUpResponse authenticate(@RequestParam("evergreenId") String evergreenId, @RequestParam("password") String pwd){
         SignUpResponse signUpResponse = new SignUpResponse();
         signUpResponse.setSuccess("true");
         signUpResponse.setEvergreenId(evergreenId);
